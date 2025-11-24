@@ -3,204 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bishan Rasaili - Backend Engineer Portfolio" />
-  <title>Bishan Rasaili | Backend & Cloud Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Bishan Rasaili – Portfolio</title>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --card: #fafafa;
+      --border: #e5e5e5;
+      --link: #2563eb;
+    }
+    body.dark {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --card: #161b22;
+      --border: #30363d;
+      --link: #409eff;
+    }
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
       line-height: 1.6;
     }
     header {
-      background-color: #0a192f;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #cfd8e3;
-    }
-    main {
       max-width: 900px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #0a192f;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.3rem;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .project {
-      margin-bottom: 1.2rem;
-    }
-    .skills, .links {
+      margin: auto;
+      padding: 30px 20px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+      justify-content: space-between;
+      align-items: center;
     }
-    .tag {
-      background-color: #e8eef8;
-      border-radius: 5px;
-      padding: 0.3rem 0.7rem;
-      font-size: 0.9rem;
+    .btn, .link-btn {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.3s;
+      font-size: 14px;
+    }
+    .btn:hover, .link-btn:hover {
+      background: var(--card);
+    }
+    .main {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 50px;
+    }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+    .skills span {
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin: 3px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 12px 0;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
     }
     footer {
       text-align: center;
-      padding: 1.5rem;
-      color: #777;
-      background-color: #f1f3f6;
-      font-size: 0.9rem;
+      padding: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.6;
     }
-    @media (max-width: 600px) {
-      main { padding: 1.2rem; }
+    .fade {
+      animation: fadeIn 0.8s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <h1>Bishan Rasaili</h1>
-    <p>Backend Engineer | Go • Java • Python • Docker • AWS</p>
+    <div>
+      <h1 class="fade">Bishan Rasaili</h1>
+      <p>Backend & Cloud Engineer — Go • Java • Python • AWS</p>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a class="link-btn" href="Copy of Bishan Resume.pdf" target="_blank">Resume</a>
+      <a class="link-btn" href="https://github.com/bishan20" target="_blank">GitHub</a>
+      <button class="btn" onclick="toggleTheme()">🌙</button>
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
+  <div class="main">
+
+    <section class="fade">
+      <h2>Hi — I’m Bishan</h2>
       <p>
-        I'm a Master's candidate in <strong>Computer Science & Information Systems</strong> at
-        <em>Saginaw Valley State University</em> (Graduating Dec 2025).
-        I have over <strong>3 years of experience</strong> in backend and cloud-native development —
-        building scalable APIs, automating CI/CD pipelines, and deploying secure, distributed systems.
+        Backend & Cloud Engineer with 3 years building scalable microservices, high-performance APIs, and cloud-native systems. I focus on clean, reliable engineering and also work with frontend technologies such as AJAX and jQuery when needed.
       </p>
-      <p><strong>Currently seeking:</strong> Full-time Backend / Software Engineer roles</p>
-    </section>
-
-    <section id="experience">
-      <h2>Work Experience</h2>
-
-      <h3>Backend Developer — Scodus Innovations Pvt. Ltd, Nepal</h3>
-      <p><em>Apr 2022 – Nov 2023</em></p>
-      <ul>
-        <li>Built microservices using Go and gRPC, reducing average API latency by <strong>40%</strong>.</li>
-        <li>Automated CI/CD pipelines with Docker and GitHub Actions, improving deployment frequency by <strong>60%</strong>.</li>
-        <li>Enhanced backend reliability with database optimization and secure authentication systems.</li>
-      </ul>
-
-      <h3>Java Developer — IshaniTech, Nepal</h3>
-      <p><em>Jan 2021 – Mar 2022</em></p>
-      <ul>
-        <li>Developed Spring Boot applications integrating REST APIs and relational databases.</li>
-        <li>Optimized SQL queries and ORM mappings, improving performance by <strong>35%</strong>.</li>
-        <li>Collaborated with cross-functional Agile teams and implemented test-driven development.</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3><a href="https://github.com/bishan20/Smart-To-Do" target="_blank">Smart To-Do List</a></h3>
-        <p><em>Python, Django, SQLite, Bootstrap, JavaScript</em></p>
-        <p>
-          A task management web app supporting authentication, CRUD, email reminders, and a light/dark mode toggle.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/bishan20/Chat-system_golang" target="_blank">Chat System</a></h3>
-        <p><em>Go, PostgreSQL, Docker, WebSocket</em></p>
-        <p>
-          Real-time 1-on-1 messaging platform with message delivery acknowledgments and deletion.
-          Deployed via Docker for reliable, low-latency communication.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/bishan20/Web-Scraping_golang" target="_blank">Web Scraping System</a></h3>
-        <p><em>Go, PostgreSQL, Docker, Gin, GORM, JWT</em></p>
-        <p>
-          Secure web app allowing authenticated users to scrape and store data efficiently, achieving 99.9% uptime.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/bishan20/Transaction_Centralization" target="_blank">Transaction Centralization</a></h3>
-        <p><em>Flutter, Go, GORM, MySQL, JWT</em></p>
-        <p>
-          Mobile app aggregating transactions from multiple platforms for real-time expense tracking.
-        </p>
+      <div class="skills" style="margin-top:15px;">
+        <span>Go</span><span>Java</span><span>Python</span><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>gRPC</span><span>RabbitMQ</span><span>AJAX</span><span>jQuery</span>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="skills">
-        <span class="tag">Go</span>
-        <span class="tag">Java</span>
-        <span class="tag">Python</span>
-        <span class="tag">Spring Boot</span>
-        <span class="tag">Django</span>
-        <span class="tag">gRPC</span>
-        <span class="tag">Microservices</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">AWS</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Kubernetes</span>
-        <span class="tag">CI/CD</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">Agile / Scrum</span>
-      </div>
-    </section>
+    <h2 style="margin-top:40px;">Projects</h2>
 
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>M.S. in Computer Science & Information Systems</strong><br>
-      <em>Saginaw Valley State University, USA — Expected Dec 2025</em></p>
+    <div class="card fade">
+      <h3><a href="https://github.com/bishan20/Smart-To-Do" target="_blank" style="color:var(--link);text-decoration:none;">Smart To-Do List</a></h3>
+      <p>Django app with auth, email reminders, responsive UI, and clean Bootstrap styling.</p>
+    </div>
 
-      <p><strong>B.E. in Computer Engineering</strong><br>
-      <em>Pokhara University, Nepal — GPA: 3.71 / 4.00</em></p>
-    </section>
+    <div class="card fade">
+      <h3><a href="https://github.com/bishan20/chat-system" target="_blank" style="color:var(--link);text-decoration:none;">Chat System</a></h3>
+      <p>Real-time messaging platform using WebSockets and Docker deployment.</p>
+    </div>
 
-    <section id="links">
-      <h2>Links</h2>
-      <div class="links">
-        <a href="mailto:bishanras99@gmail.com">📧 Email</a>
-        <a href="https://linkedin.com/in/bishan20" target="_blank">💼 LinkedIn</a>
-        <a href="https://github.com/bishan20" target="_blank">💻 GitHub</a>
-        <a href="Bishan_Resume_2025.pdf" target="_blank">📄 Resume</a>
-      </div>
-    </section>
-  </main>
+    <div class="card fade">
+      <h3><a href="https://github.com/bishan20/web-scraping-system" target="_blank" style="color:var(--link);text-decoration:none;">Web Scraping System</a></h3>
+      <p>Containerized scraping system with optimized crawling and resource usage.</p>
+    </div>
 
-  <footer>
-    © 2025 Bishan Rasaili — Designed using HTML & GitHub Pages
-  </footer>
+    <h2 style="margin-top:40px;">Work Highlights</h2>
+
+    <div class="card fade">
+      <h3>Full-Stack Integration — IshaniTech</h3>
+      <p>Implemented Spring Boot APIs and integrated frontend features with AJAX and jQuery for responsive data interactions.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>Cloud Deployments — Scodus Innovations</h3>
+      <p>Deployed microservices to AWS ECS/ECR, configured CloudWatch monitoring, and automated releases using GitHub Actions.</p>
+    </div>
+
+    <h2 style="margin-top:40px;">Contact</h2>
+    <p>Email: <a href="mailto:bishanras99@gmail.com" style="color:var(--link);">bishanras99@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/bishan20" target="_blank" style="color:var(--link);">linkedin.com/in/bishan20</a></p>
+  </div>
+
+  <footer>© 2025 Bishan Rasaili — Built with GitHub Pages</footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 </body>
 </html>
