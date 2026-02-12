@@ -1,183 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bishan Rasaili – Portfolio</title>
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #222222;
-      --card: #fafafa;
-      --border: #e5e5e5;
-      --link: #2563eb;
-    }
-    body.dark {
-      --bg: #0d1117;
-      --text: #e6edf3;
-      --card: #161b22;
-      --border: #30363d;
-      --link: #409eff;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.4s, color 0.4s;
-      line-height: 1.6;
-    }
-    header {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .btn, .link-btn {
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      text-decoration: none;
-      color: var(--text);
-      transition: 0.3s;
-      font-size: 14px;
-    }
-    .btn:hover, .link-btn:hover {
-      background: var(--card);
-    }
-    .main {
-      max-width: 900px;
-      margin: auto;
-      padding: 0 20px 50px;
-    }
-    h1, h2, h3 {
-      margin-bottom: 10px;
-    }
-    .skills span {
-      padding: 5px 10px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 12px;
-      display: inline-block;
-      margin: 3px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 15px;
-      border-radius: 8px;
-      margin: 12px 0;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: var(--text);
-      opacity: 0.6;
-    }
-    .fade {
-      animation: fadeIn 0.8s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div>
-      <h1 class="fade">Bishan Rasaili</h1>
-      <p>Backend & Cloud Engineer — Go • Java • Python • AWS</p>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <a class="link-btn" href="Bishan Resume 2025.pdf" target="_blank">Resume</a>
-      <a class="link-btn" href="https://github.com/bishan20" target="_blank">GitHub</a>
-      <button class="btn" onclick="toggleTheme()">🌙</button>
-    </div>
-  </header>
-
-  <div class="main">
-
-    <section class="fade">
-      <h2>Hi — I’m Bishan</h2>
-      <p>
-        I’m a Backend & Cloud Engineer with 4 years of experience building scalable APIs, microservices, and cloud-native systems. I focus on writing clean, reliable software and designing systems that perform well in production. I enjoy working across the stack when needed and contributing to projects that emphasize robustness, automation, and engineering excellence.
-      </p>
-      <div class="skills" style="margin-top:15px; display:grid; grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); gap:12px;">
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" width="32"/><div>Go</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="32"/><div>Java</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="32"/><div>Python</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="32"/><div>AWS</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="32"/><div>Docker</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="32"/><div>Kubernetes</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="32"/><div>Linux</div></div>
-        <div style="text-align:center;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="32"/><div>Git</div></div>
-      </div>
-    </section>
-
-    <h2 style="margin-top:40px;">Projects</h2>
-
-    <div class="card fade">
-      <h3><a href="https://github.com/bishan20/Transaction_Centralization" target="_blank" style="color:var(--link);text-decoration:none;">Tramsaction Centralization</a></h3>
-      <p>Cross-platform mobile app aggregating financial transactions across banking, PSPs, and e-commerce platforms into a unified dashboard.</p>
-    </div>
-    
-    <div class="card fade">
-      <h3><a href="https://github.com/bishan20/Smart-To-Do" target="_blank" style="color:var(--link);text-decoration:none;">Smart To-Do List</a></h3>
-      <p>Django app with auth, email reminders, responsive UI, and clean Bootstrap styling.</p>
-    </div>
-
-    <div class="card fade">
-      <h3><a href="https://github.com/bishan20/Chat-system_golang" target="_blank" style="color:var(--link);text-decoration:none;">Chat System</a></h3>
-      <p>Real-time messaging platform using WebSockets and Docker deployment.</p>
-    </div>
-
-    <div class="card fade">
-      <h3><a href="https://github.com/bishan20/Web-Scraping_golang" target="_blank" style="color:var(--link);text-decoration:none;">Web Scraping System</a></h3>
-      <p>Containerized scraping system with optimized crawling and resource usage.</p>
-    </div>
-
-    <h2 style="margin-top:40px;">Work Highlights</h2>
-
-    <div class="card fade">
-      <h3>Java Developer — IshaniTech</h3>
-      <p>Implemented Spring Boot APIs and integrated frontend features with AJAX and jQuery for responsive data interactions.</p>
-    </div>
-
-    <div class="card fade">
-      <h3>Backend/Cloud Engineer — Scodus Innovations</h3>
-      <p>Deployed microservices to AWS ECS/ECR, configured CloudWatch monitoring, and automated releases using GitHub Actions.</p>
-    </div>
-
-    <h2 style="margin-top:40px;">Contact</h2>
-    <p style="display:flex;align-items:center;gap:8px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" width="20"/>
-      <a href="mailto:bishanras99@gmail.com" style="color:var(--link);">bishanras99@gmail.com</a>
-    </p>
-    <p style="display:flex;align-items:center;gap:8px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20"/>
-      <a href="https://linkedin.com/in/bishan20" target="_blank" style="color:var(--link);">linkedin.com/in/bishan20</a>
-    </p>
-    <!-- <p>LinkedIn: <a href="https://linkedin.com/in/bishan20" target="_blank" style="color:var(--link);">linkedin.com/in/bishan20</a></p> -->
-  </div>
-
-  <footer>© 2025 Bishan Rasaili — Built with GitHub Pages</footer>
-
+  <title>Bishan Rasaili | Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#6366f1",
+            darkbg: "#0f172a",
+            card: "#1e293b"
+          }
+        }
+      }
     }
   </script>
+</head>
+
+<body class="bg-darkbg text-gray-200 font-sans">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full bg-darkbg/90 backdrop-blur-md z-50 shadow-md">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold text-white">Bishan Rasaili</h1>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#about" class="hover:text-primary">About</a>
+      <a href="#projects" class="hover:text-primary">Projects</a>
+      <a href="#skills" class="hover:text-primary">Skills</a>
+      <a href="#contact" class="hover:text-primary">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center px-6">
+  <h2 class="text-4xl md:text-6xl font-extrabold mb-6">
+    Backend-Focused Software Engineer <br />
+    <span class="text-primary">Building Scalable Systems</span>
+  </h2>
+  <p class="max-w-2xl text-lg text-gray-400 mb-8">
+    MS-CSIS graduate with 4+ years of experience designing high-performance
+    microservices, distributed systems, and cloud-native applications.
+  </p>
+  <div class="space-x-4">
+    <a href="resume.pdf" target="_blank"
+      class="bg-primary px-6 py-3 rounded-lg hover:scale-105 transition transform">
+      View Resume
+    </a>
+    <a href="#projects"
+      class="border border-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition">
+      View Projects
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 px-6 max-w-6xl mx-auto">
+  <h3 class="text-3xl font-bold mb-8 text-center">About Me</h3>
+  <p class="text-gray-400 leading-relaxed text-lg">
+    I am a Software Engineer with 4 years of experience delivering scalable,
+    resilient backend systems using Go, Java, Python, and AWS. I specialize in
+    distributed microservices, REST/gRPC APIs, CI/CD automation, and
+    performance optimization. My focus is building systems that are efficient,
+    maintainable, and production-ready.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-20 bg-slate-900 px-6">
+  <h3 class="text-3xl font-bold mb-12 text-center">Projects</h3>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <!-- Project Card -->
+    <div class="bg-card rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <img src="https://via.placeholder.com/600x400" alt="Project" class="w-full">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Cloud-Native API Deployment</h4>
+        <p class="text-gray-400 mb-3 text-sm">
+          Django REST API deployed on AWS Elastic Beanstalk with S3 storage and IAM role-based security.
+        </p>
+        <p class="text-primary text-sm mb-4">Django • AWS • EC2 • S3 • IAM</p>
+        <a href="#" target="_blank" class="text-primary hover:underline">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-card rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <img src="https://via.placeholder.com/600x400" alt="Project" class="w-full">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Real-Time Chat System</h4>
+        <p class="text-gray-400 mb-3 text-sm">
+          WebSocket-based messaging platform in Go with PostgreSQL persistence and Docker containerization.
+        </p>
+        <p class="text-primary text-sm mb-4">Go • WebSocket • PostgreSQL • Docker</p>
+        <a href="#" target="_blank" class="text-primary hover:underline">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-card rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <img src="https://via.placeholder.com/600x400" alt="Project" class="w-full">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Web-Scraping Data Pipeline</h4>
+        <p class="text-gray-400 mb-3 text-sm">
+          Concurrent Go-based scraping platform with JWT authentication and 99.9% uptime.
+        </p>
+        <p class="text-primary text-sm mb-4">Go • Gin • GORM • JWT • Docker</p>
+        <a href="#" target="_blank" class="text-primary hover:underline">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 px-6 max-w-6xl mx-auto">
+  <h3 class="text-3xl font-bold mb-12 text-center">Technical Skills</h3>
+
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-primary">Languages</h4>
+      <p class="text-gray-400">Go, Java, Python, SQL, C#, JavaScript</p>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-primary">Backend</h4>
+      <p class="text-gray-400">Spring Boot, Gin, Django, REST, gRPC, RabbitMQ, Microservices</p>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-primary">Cloud & DevOps</h4>
+      <p class="text-gray-400">AWS, Docker, Kubernetes, GitHub Actions, CI/CD</p>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4 text-primary">Databases</h4>
+      <p class="text-gray-400">PostgreSQL, MySQL, SQL Server, Redis</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-slate-900 px-6">
+  <h3 class="text-3xl font-bold mb-12 text-center">Contact Me</h3>
+
+  <div class="max-w-xl mx-auto">
+    <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+
+      <input type="text" name="name" placeholder="Your Name"
+        class="w-full p-3 rounded bg-card border border-gray-700 focus:outline-none focus:border-primary" required>
+
+      <input type="email" name="email" placeholder="Your Email"
+        class="w-full p-3 rounded bg-card border border-gray-700 focus:outline-none focus:border-primary" required>
+
+      <textarea name="message" rows="5" placeholder="Your Message"
+        class="w-full p-3 rounded bg-card border border-gray-700 focus:outline-none focus:border-primary" required></textarea>
+
+      <button type="submit"
+        class="bg-primary px-6 py-3 rounded-lg hover:scale-105 transition transform w-full">
+        Send Message
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-6 bg-darkbg border-t border-gray-800">
+  <p class="text-gray-500 text-sm">
+    © 2026 Bishan Rasaili — Built with Tailwind CSS
+  </p>
+</footer>
+
 </body>
 </html>
