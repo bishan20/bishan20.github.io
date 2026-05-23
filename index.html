@@ -171,9 +171,22 @@
     @media (max-width: 820px) {
       .hero-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
-      .hero-photo-col { order: -1; }
-      .hero-photo { aspect-ratio: 4/3; max-height: 280px; }
+      .hero-photo-col {
+        order: -1;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-photo {
+        width: 160px;
+        height: 160px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        max-height: none;
+      }
     }
 
     .hero-name {
@@ -744,7 +757,7 @@
 
     <!-- Right: photo -->
     <div class="hero-photo-col reveal">
-      <img src="profile.webp" alt="Bishan Rasaili" class="hero-photo" />
+      <img src="profile.webp?v=20260523" alt="Bishan Rasaili" class="hero-photo" />
     </div>
 
   </div>
