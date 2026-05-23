@@ -149,6 +149,42 @@
       content: ''; display: block; width: 28px; height: 1px; background: var(--ink-4);
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      outline: 1px solid var(--rule);
+      outline-offset: -1px;
+      background: var(--paper-3);
+    }
+
+    /* Stack on mobile */
+    @media (max-width: 820px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-photo-col { order: -1; }
+      .hero-photo { aspect-ratio: 4/3; max-height: 280px; }
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5rem;
+    }
+
     .hero-headline {
       font-family: var(--serif);
       font-size: clamp(3.4rem, 7.5vw, 6.2rem);
@@ -242,17 +278,16 @@
     .reveal.in { opacity: 1; transform: none; }
 
     /* ─────────────────────────────────────────────────────
-       ABOUT — photo + narrative
+       ABOUT — centered narrative
     ───────────────────────────────────────────────────── */
     #about { background: var(--paper); }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 5rem; align-items: start;
+    /* Centered content block — intentional, not a broken grid */
+    .about-copy {
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    /* Left: personal narrative */
     .about-copy p {
       font-size: 1rem; font-weight: 300; color: var(--ink-2);
       line-height: 1.9; margin-bottom: 1.15rem;
@@ -260,7 +295,7 @@
     .about-copy p:last-child { margin-bottom: 0; }
     .about-copy strong { font-weight: 500; color: var(--ink); }
 
-    /* Values — three short lines, no card UI */
+    /* Values list — three short lines */
     .about-values {
       margin-top: 2.5rem;
       border-top: 1px solid var(--rule);
@@ -282,24 +317,9 @@
     }
     .about-value-text strong { font-weight: 500; color: var(--ink); }
 
-    /* Right: profile photo */
-    .about-photo-col {}
-    .about-photo {
-      width: 100%; aspect-ratio: 3/4;
-      object-fit: cover; object-position: center top;
-      border-radius: 4px;
-      background: var(--paper-3);
-      /* Subtle frame */
-      outline: 1px solid var(--rule);
-      outline-offset: -1px;
-    }
-    .about-photo-caption {
-      margin-top: 1rem;
-      font-size: 0.75rem; color: var(--ink-4); line-height: 1.5;
-    }
-    /* Identity chips below photo */
+    /* Identity chips */
     .about-chips {
-      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 2rem;
     }
     .chip {
       font-size: 0.72rem; padding: 0.25rem 0.65rem;
@@ -663,147 +683,143 @@
      HERO
 ════════════════════════════════════════════════ -->
 <div id="home" style="max-width:var(--max); margin:0 auto; padding: calc(var(--nav-h) + 6rem) var(--gutter) 6rem;">
+  <div class="hero-grid">
 
-  <!-- Plain status line — no glowing dots or badges -->
-  <p class="hero-status reveal">Software Engineer</p>
+    <!-- Left: all existing hero text, unchanged -->
+    <div>
+      <p class="hero-status reveal">Software Engineer</p>
 
-  <!-- Name sits above the headline, same serif weight -->
-  <p class="hero-name reveal">Bishan Rasaili</p>
+      <!-- Name sits above the headline, same serif weight -->
+      <p class="hero-name reveal">Bishan Rasaili</p>
 
-  <h1 class="hero-headline reveal">
-    I build systems<br />
-    <em>that hold up.</em>
-  </h1>
+      <h1 class="hero-headline reveal">
+        I build systems<br />
+        <em>that hold up.</em>
+      </h1>
 
-  <p class="hero-lead reveal">
-    Hey, I'm <strong>Bishan</strong> — a software engineer with four years building backend
-    systems that actually scale. From <strong>distributed microservices at 10k+ concurrent events</strong>
-    to a civic platform serving 26,000 real people, I care about getting the
-    architecture right and making it last.
-  </p>
+      <p class="hero-lead reveal">
+        Hello, I'm <strong>Bishan</strong> — a software engineer with four years building backend
+        systems that actually scale. From <strong>distributed microservices at 10k+ concurrent events</strong>
+        to a civic platform serving 26,000 real people, I care about getting the
+        architecture right and making it last.
+      </p>
 
-  <div class="hero-actions reveal">
-    <a href="#contact" class="btn btn-solid">
-      Get in touch
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
-    <a href="#projects" class="btn btn-outline">View projects</a>
-    <a href="resume.pdf" download class="btn btn-outline">
-      Download résumé
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M8 3v7M5 7l3 3 3-3M3 13h10"/>
-      </svg>
-    </a>
+      <div class="hero-actions reveal">
+        <a href="#contact" class="btn btn-solid">
+          Get in touch
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+        <a href="#projects" class="btn btn-outline">View projects</a>
+        <a href="resume.pdf" download class="btn btn-outline">
+          Download résumé
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M8 3v7M5 7l3 3 3-3M3 13h10"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Stats — serif numerals, plain typography -->
+      <div class="hero-stats reveal">
+        <div class="hero-stat">
+          <div class="hero-stat-num">4+</div>
+          <div class="hero-stat-label">Years shipping production code</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">26k+</div>
+          <div class="hero-stat-label">Users served in production</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">40%</div>
+          <div class="hero-stat-label">Inter-service Latency reduction</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">10k+</div>
+          <div class="hero-stat-label">Concurrent events handled</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: photo -->
+    <div class="hero-photo-col reveal">
+      <img src="profile.webp" alt="Bishan Rasaili" class="hero-photo" />
+    </div>
+
   </div>
-
-  <!-- Stats — serif numerals, plain typography -->
-  <div class="hero-stats reveal">
-    <div class="hero-stat">
-      <div class="hero-stat-num">4+</div>
-      <div class="hero-stat-label">Years shipping production code</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">26k+</div>
-      <div class="hero-stat-label">Users served in production</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">40%</div>
-      <div class="hero-stat-label">Inter-service Latency reduction</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">10k+</div>
-      <div class="hero-stat-label">Concurrent events handled</div>
-    </div>
-  </div>
-
 </div>
 
 <hr class="rule-full" />
 
 
 <!-- ═══════════════════════════════════════════════
-     ABOUT — narrative + profile photo
+     ABOUT — narrative 
 ════════════════════════════════════════════════ -->
 <section id="about">
   <div class="section-inner">
     <p class="section-label reveal">About</p>
     <h2 class="section-heading reveal">More than <em>a stack.</em></h2>
 
-    <div class="about-grid">
+    <!-- Left: narrative text + values -->
+    <div class="about-copy">
+    
+      <div class="reveal">
+        <p>
+          I came to software engineering through a genuine curiosity about how things
+          work under the hood. At <strong>Scodus Innovations</strong>, I got to go deep
+          on distributed systems — designing multi-tenant SaaS architecture in Go with
+          gRPC, thinking hard about latency, security boundaries, and reliability at scale.
+        </p>
+        <p>
+          Before that, at <strong>Ishani Technology</strong>, I worked on something that
+          felt closer to home: a civic registration system used by real people in my
+          community. That experience shaped how I think about software — it's not just a
+          technical challenge, it's something that affects people's daily lives.
+          Getting it right matters.
+        </p>
+        <p>
+          I'm wrapping up my <strong>Master's in Computer Science & Information Systems</strong>
+          at Saginaw Valley State University and looking for backend or full-stack engineering
+          roles where I can own meaningful systems and grow with a strong team.
+        </p>
+      </div>
 
-      <!-- Left: narrative text + values -->
-      <div class="about-copy">
-        <div class="reveal">
-          <p>
-            I came to software engineering through a genuine curiosity about how things
-            work under the hood. At <strong>Scodus Innovations</strong>, I got to go deep
-            on distributed systems — designing multi-tenant SaaS architecture in Go with
-            gRPC, thinking hard about latency, security boundaries, and reliability at scale.
-          </p>
-          <p>
-            Before that, at <strong>Ishani Technology</strong>, I worked on something that
-            felt closer to home: a civic registration system used by real people in my
-            community. That experience shaped how I think about software — it's not just a
-            technical challenge, it's something that affects people's daily lives.
-            Getting it right matters.
-          </p>
-          <p>
-            I'm wrapping up my <strong>Master's in Computer Science & Information Systems</strong>
-            at Saginaw Valley State University and looking for backend or full-stack engineering
-            roles where I can own meaningful systems and grow with a strong team.
-          </p>
+      <!-- Values list — clean, no icon gimmicks -->
+      <div class="about-values reveal">
+        <div class="about-value">
+          <!-- <span class="about-value-num">01</span> -->
+          <span class="about-value-text">
+            <strong>Systems thinking first.</strong> I think through reliability,
+            latency, and failure modes before writing a line. Good architecture is invisible when it works.
+          </span>
         </div>
-
-        <!-- Values list — clean, no icon gimmicks -->
-        <div class="about-values reveal">
-          <div class="about-value">
-            <!-- <span class="about-value-num">01</span> -->
-            <span class="about-value-text">
-              <strong>Systems thinking first.</strong> I think through reliability,
-              latency, and failure modes before writing a line. Good architecture is invisible when it works.
-            </span>
-          </div>
-          <div class="about-value">
-            <!-- <span class="about-value-num">02</span> -->
-            <span class="about-value-text">
-              <strong>Impact over activity.</strong> 40% latency reduction,
-              60% less release overhead — those aren't resume lines, they're decisions
-              that had to be made and defended.
-            </span>
-          </div>
-          <div class="about-value">
-            <!-- <span class="about-value-num">03</span> -->
-            <span class="about-value-text">
-              <strong>Always learning.</strong> Java to Go, monolith to microservices.
-              I embrace new paradigms and bring that curiosity into every team I join.
-            </span>
-          </div>
+        <div class="about-value">
+          <!-- <span class="about-value-num">02</span> -->
+          <span class="about-value-text">
+            <strong>Impact over activity.</strong> 40% latency reduction,
+            60% less release overhead — those aren't resume lines, they're decisions
+            that had to be made and defended.
+          </span>
+        </div>
+        <div class="about-value">
+          <!-- <span class="about-value-num">03</span> -->
+          <span class="about-value-text">
+            <strong>Always learning.</strong> Java to Go, monolith to microservices.
+            I embrace new paradigms and bring that curiosity into every team I join.
+          </span>
         </div>
       </div>
 
-      <!-- Right: profile photo — editorial, not avatar -->
-      <div class="about-photo-col reveal">
-        <!--
-          File: profile.jpg — place in repo root alongside index.html.
-          Compress to ~120–150KB using squoosh.app (WebP or JPEG, 80% quality).
-          Ideal crop: portrait orientation, face in upper half.
-        -->
-        <img
-          src="profile.webp"
-          alt="Bishan Rasaili"
-          class="about-photo"
-        />
-        <p class="about-photo-caption">Holly, Michigan — MS-CSIS, Saginaw Valley State University</p>
-        <!-- <div class="about-chips">
-          <span class="chip">Fluent English, Hindi, Nepali</span>
-          <span class="chip">Authorized to work for any employer in the US</span>
-          <span class="chip">Available now</span>
-        </div> -->
+      <!-- Chips move here, below the text -->
+      <div class="about-chips">
+        <span class="chip">Michigan, United States</span>
+        <span class="chip">MS-CSIS 2025</span>
+        <span class="chip">Fluent English, Hindi, Nepali</span>
+        <span class="chip">Authorized to work for any employer in the US</span>
       </div>
-
     </div>
+
   </div>
 </section>
 
